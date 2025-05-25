@@ -22,9 +22,6 @@
    curl -fsSL https://deno.land/install.sh | sh
    ```
 
-   Luego, asegurarse de que `deno` esté en tu PATH. Más información en:  
-    https://deno.land/manual/getting_started/installation
-
 2. Ejecutar pruebas:
    ```bash
    deno test
