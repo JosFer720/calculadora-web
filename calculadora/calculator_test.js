@@ -1,18 +1,13 @@
-// calculator_test.js
 import { assertEquals } from "https://deno.land/std@0.224.0/testing/asserts.ts";
 
-// Simula una evaluación básica similar al hook useCalculator
 function evaluate(input) {
   try {
-    // Reemplazar símbolo de porcentaje con su valor decimal
     const sanitized = input.replace(/%/g, "*0.01");
 
-    // Evitar múltiples puntos decimales consecutivos
     if (/\d*\.\d*\./.test(sanitized)) return "ERROR";
 
     const result = eval(sanitized);
 
-    // Validaciones del resultado
     if (
       typeof result !== "number" ||
       isNaN(result) ||
@@ -29,7 +24,6 @@ function evaluate(input) {
   }
 }
 
-// 🧪 Test Cases
 Deno.test("suma básica sin errores", () => {
   assertEquals(evaluate("2+2"), "4");
 });
