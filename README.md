@@ -17,10 +17,15 @@
 
 ## Ejecutar pruebas con Deno
 
-1. Tener Deno instalado:  
+1. Instalar Deno:
+   ```bash
+   curl -fsSL https://deno.land/install.sh | sh
+   ```
+
+   Luego, asegurarse de que `deno` esté en tu PATH. Más información en:  
    👉 https://deno.land/manual/getting_started/installation
 
-2. Ejecuta las pruebas:
+2. Ejecutar pruebas:
    ```bash
    deno test
    ```
