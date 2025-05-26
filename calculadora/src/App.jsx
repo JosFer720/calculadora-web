@@ -6,13 +6,13 @@ import { useCalculator } from './hooks/useCalculator'
 function App () {
   const {
     display, input, operate, equal,
-    decimal, clear
+    decimal, toggleSign, clear
   } = useCalculator()
 
   const handleClick = key => {
     if (!isNaN(key)) return input(key)
     if (key === '.') return decimal()
-    if (key === '+/-') return // toggleSign deshabilitado
+    if (key === '+/-') return toggleSign()
     if (key === 'C') return clear()
     if (key === '=') return equal()
     if (key === 'mod') return operate('%')

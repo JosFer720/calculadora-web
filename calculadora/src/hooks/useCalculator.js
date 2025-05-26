@@ -11,10 +11,7 @@ export function useCalculator () {
       setDisplay(val)
       setReset(false)
     } else if (display.length < 9) {
-      const newDisplay = display === '0' ? val : display + val
-      if (!newDisplay.startsWith('-')) {
-        setDisplay(newDisplay)
-      }
+      setDisplay(display === '0' ? val : display + val)
     }
   }
 
@@ -35,7 +32,6 @@ export function useCalculator () {
 
   const calculate = (a, b, operation) => {
     let res
-
     if (operation === '+') res = a + b
     if (operation === '-') res = a - b
     if (operation === '*') res = a * b
@@ -64,6 +60,16 @@ export function useCalculator () {
     }
   }
 
+  const toggleSign = () => {
+    if (display === '0' || display === 'ERROR') return
+
+    let newValue = display.startsWith('-')
+      ? display.slice(1)
+      : '-' + display
+    if (newValue.length > 9) return
+    setDisplay(newValue)
+  }
+
   const clear = () => {
     setDisplay('0')
     setPrev(null)
@@ -77,6 +83,7 @@ export function useCalculator () {
     operate,
     equal,
     decimal,
+    toggleSign,
     clear
   }
 }
