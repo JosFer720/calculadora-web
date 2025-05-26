@@ -16,17 +16,22 @@ export function useCalculator () {
   }
 
   const operate = nextOp => {
+    console.log('perate llamada con:', nextOp)
+  
     const current = parseFloat(display)
-      if (prev !== null && op && !reset) {
+  
+    if (prev !== null && op && !reset) {
       const result = calculate(prev, current, op)
       setDisplay(result)
       setPrev(result === 'ERROR' ? null : parseFloat(result))
     } else if (!reset) {
       setPrev(current)
     }
-      setOp(nextOp)
+  
+    setOp(nextOp)
     setReset(true)
   }
+  
 
   const calculate = (a, b, operation) => {
     let res
