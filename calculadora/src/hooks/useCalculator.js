@@ -17,15 +17,15 @@ export function useCalculator () {
 
   const operate = nextOp => {
     const current = parseFloat(display)
-    if (prev !== null && op) {
+      if (prev !== null && op && !reset) {
       const result = calculate(prev, current, op)
       setDisplay(result)
       setPrev(result === 'ERROR' ? null : parseFloat(result))
-    } else {
+    } else if (!reset) {
       setPrev(current)
     }
+      setOp(nextOp)
     setReset(true)
-    setOp(nextOp)
   }
 
   const calculate = (a, b, operation) => {
