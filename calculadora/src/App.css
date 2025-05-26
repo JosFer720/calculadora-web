@@ -81,3 +81,25 @@ button[data-label="C"] {
 button:hover {
   filter: brightness(1.2);
 }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.github-button {
+  background-color: #24292e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px #1b1f23;
+  transition: background-color 0.3s ease;
+}
+
+.github-button:hover {
+  background-color: #444c56;
+}

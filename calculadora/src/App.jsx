@@ -20,9 +20,19 @@ function App () {
   }
 
   return (
-    <div className='calculator'>
-      <Display value={display} />
-      <Keypad onClick={handleClick} />
+    <div className='app-container'>
+      <div className='calculator'>
+        <Display value={display} />
+        <Keypad onClick={handleClick} />
+      </div>
+      <a
+        className='github-button'
+        href='https://github.com/JosFer720/calculadora-web'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        Repositorio
+      </a>
     </div>
   )
 }
